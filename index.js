@@ -16,6 +16,9 @@
         var width = 280;
         var height = 160;
 
+        A += 0.03;
+        //B += 0.03;
+
         var cA = Math.cos(A),
             cB = Math.cos(B),
             sA = Math.sin(A),
@@ -35,10 +38,10 @@
                 cp = Math.cos(i),
                     h = ct + 2,
                     D = 1 / (sp * h * sA + st * cA + 5),
-                    t = sp * h * cA - st - sA;
+                    t = sp * h * cA - st * sA;
                 
                 var x = Math.floor(width / 2 + (width / 4) * D * (cp * h * cB - t * sB));
-                var y = Math.floor(height / 2 + (width / 4) * D * (cp * h * cB + t * sB));
+                var y = Math.floor(height / 2 + (height / 4) * D * (cp * h * sB + t * cB));
 
                 var o = x + width * y;
 
